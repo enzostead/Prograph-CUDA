@@ -81,7 +81,7 @@ int main()
 
   cudaMemcpy( rgb_d, rgb, 3 * rows * cols, cudaMemcpyHostToDevice );
 
-  dim3 block( 32, 4 );
+  dim3 block( 64, 8 );
   dim3 grid0( ( cols - 1) / block.x + 1 , ( rows - 1 ) / block.y + 1 );
   /**
    * Pour la version shared il faut faire superposer les blocs de 2 pixels
